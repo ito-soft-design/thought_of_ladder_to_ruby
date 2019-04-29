@@ -124,4 +124,4 @@ Mac Book ProでRubyで書いたプログラムで制御し、PLCの入出力の�
 
 ### デモ動画
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/phHdJCKn37I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/phHdJCKn37I/0.jpg)](https://www.youtube.com/watch?v=phHdJCKn37I)
