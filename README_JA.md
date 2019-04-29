@@ -16,7 +16,7 @@ y1 = (x1 || y1) && !x2
 
 ### 構成
 
-Mac Book ProでRubyで書いたプログラムで制御し、PLCの入出力の操作、モニターをirBoardで行います。  
+Rubyで書いたプログラムをMac Book Proで実行しPLCを制御し、PLCの入出力の操作、モニターをirBoardで行います。  
 ここでは Mac Book Proを使いましたが、WindowsやLinux、Raspberry PIに置き換える事ができます。(実際の確認はまだしてません)
 
 ![構成図](https://i.gyazo.com/77556d1a56d8bb74a9b757265de93ad9.png)
@@ -93,7 +93,7 @@ Mac Book ProでRubyで書いたプログラムで制御し、PLCの入出力の�
   y1 = (x1 || y1) && !x2
   ```
 
-  但し、X、Yだと実際に配線しないと確認できないので、plc_base.rb内でBデバイスに変換して、タッチパネルで確認する様にサイクています。  
+  但し、X、Yデバイスだと実際に配線しないと確認できないので、plc_base.rb内でBデバイスに変換して、タッチパネルで確認する様に細工しています。  
 
 | 変換前 | 変換後 |
 |:--|:--|
