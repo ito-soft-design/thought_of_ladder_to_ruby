@@ -1,6 +1,6 @@
 require './plc_base'
 
 sequence do |plc|
-  plc.m0 = true
-  plc.m1 = plc.m0
+  plc.y0 = plc.x0
+  plc.y1 = (plc.x1 || plc.y1) && !plc.x2
 end

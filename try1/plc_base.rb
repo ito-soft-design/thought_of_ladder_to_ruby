@@ -44,12 +44,14 @@ class PlcBase
     if args.size == 0
       @mutex.synchronize {
         d = connection.device_by_name name
+        d = replace_device d
         return connection[d.name] if d
       }
     elsif args.size == 1 && /(.*)=$/ =~ name
       name = $1
       @mutex.synchronize {
         d = connection.device_by_name name
+        d = replace_device d
         v = args.first
         connection[d.name] = v
         return v
@@ -67,6 +69,18 @@ class PlcBase
       end
       print "\e[2A"
     end
+  end
+
+  private
+
+  def replace_device d
+    case d.suffix
+    when "X"
+      d = connection.device_by_name "B#{d.number.to_s(16)}" if (0...0x1000).include? d.number
+    when "Y"
+      d = connection.device_by_name "B#{(d.number + 0x1000).to_s(16)}" if (0...0x1000).include? d.number
+    end
+    d
   end
 
 end

@@ -1,6 +1,6 @@
 plc:
-  # MITSUBISHI iQ-R       # It's a comment.
-  cpu: iq-r               # It's just a comment for PLC.
+  # MITSUBISHI Q03UDECPU  # It's a comment.
+  cpu: Q03UDECPU          # It's just a comment for PLC.
   protocol: mc_protocol   # It's a protocol to communicate with PLC.
-  host: 192.168.0.10      # It's PLC's IP address or DNS name.
+  host: 192.168.86.10      # It's PLC's IP address or DNS name.
   port: 5010              # It's PLC's port no. It uses default port if it's not put here.
