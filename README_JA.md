@@ -54,7 +54,7 @@ Rubyで書いたプログラムをMac Book Proで実行しPLCを制御し、PLC�
 - ```config/connection.yml``` を作成します。
 
   config/connection.ymlに接続先PLCのIPアドレスなど設定します。  
-  現在の対応はは MC Protocol のみで、三菱電機製を対象としています。  
+  現在の対応は MC Protocol のみで、三菱電機製を対象としています。  
   他のメーカーの場合は MC Protocol で接続できる様に設定してください。  
 
   ```
@@ -89,8 +89,12 @@ Rubyで書いたプログラムをMac Book Proで実行しPLCを制御し、PLC�
   sequence_1.rbの中身は上の例そのままです。
 
   ```
-  y0 = x0
-  y1 = (x1 || y1) && !x2
+  require './plc_base'
+
+  sequence do |plc|
+    plc.y0 = plc.x0
+    plc.y1 = (plc.x1 || plc.y1) && !plc.x2
+  end
   ```
 
   但し、X、Yデバイスだと実際に配線しないと確認できないので、plc_base.rb内でBデバイスに変換して、タッチパネルで確認する様に細工しています。  
